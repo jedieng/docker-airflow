@@ -1,11 +1,11 @@
 # VERSION 1.10.2
-# AUTHOR: Matthieu "Puckel_" Roisil
+# AUTHOR: jedieng.com
 # DESCRIPTION: Basic Airflow container
-# BUILD: docker build --rm -t puckel/docker-airflow .
-# SOURCE: https://github.com/puckel/docker-airflow
+# BUILD: docker build --rm -t jedieng/docker-airflow .
+# SOURCE: https://github.com/jedieng/docker-airflow
 
 FROM python:3.6-slim
-LABEL maintainer="Puckel_"
+LABEL maintainer="jedieng.com"
 
 # Never prompts the user for choices on installation/configuration of packages
 ENV DEBIAN_FRONTEND noninteractive
