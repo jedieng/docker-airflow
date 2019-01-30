@@ -25,6 +25,9 @@ ENV LC_ALL en_US.UTF-8
 ENV LC_CTYPE en_US.UTF-8
 ENV LC_MESSAGES en_US.UTF-8
 
+# RBAC Auth
+ADD config/add_user.py ${AIRFLOW_HOME}/add_user.py
+
 RUN set -ex \
     && buildDeps=' \
         freetds-dev \
