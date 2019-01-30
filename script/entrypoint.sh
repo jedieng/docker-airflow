@@ -68,11 +68,12 @@ if [ "$AIRFLOW__CORE__EXECUTOR" = "CeleryExecutor" ]; then
   wait_for_port "Redis" "$REDIS_HOST" "$REDIS_PORT"
 fi
 
+echo "Running add_user python script in-case 'airflow' rbac_user is not present. Password is: 'airflow'"
+python add_user.py
+
 case "$1" in
   webserver)
     airflow initdb
-    echo "Running add_user python script in-case 'airflow' rbac_user is not present. Password is: 'airflow'"
-    python add_user.py
     if [ "$AIRFLOW__CORE__EXECUTOR" = "LocalExecutor" ]; then
       # With the "Local" executor it should all run in one container.
       airflow scheduler &
