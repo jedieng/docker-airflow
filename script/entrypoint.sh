@@ -70,7 +70,7 @@ fi
 
 echo "Running add_user python script in-case 'airflow' rbac_user is not present. Password is: 'airflow'"
 sleep 1
-python ab_user_add.py
+python add_user.py
 
 case "$1" in
   webserver)
