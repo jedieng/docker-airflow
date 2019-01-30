@@ -78,6 +78,8 @@ case "$1" in
       # With the "Local" executor it should all run in one container.
       airflow scheduler &
     fi
+    echo "Running add_user python script in-case 'airflow' rbac_user is not present. Password is: 'airflow'"
+    python add_user.py
     exec airflow webserver
     ;;
   worker|scheduler)
