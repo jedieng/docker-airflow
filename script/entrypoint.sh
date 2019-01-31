@@ -74,7 +74,7 @@ python add_user.py
 case "$1" in
   webserver)
     airflow initdb
-    sleep 5
+    sleep 15
     echo "Running add_user python script in-case 'airflow' rbac_user is not present. Password is: 'airflow'"
     python add_user.py
     if [ "$AIRFLOW__CORE__EXECUTOR" = "LocalExecutor" ]; then
